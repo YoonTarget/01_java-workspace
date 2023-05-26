@@ -15,11 +15,11 @@ package com.kh.practice1.func;
 import java.util.Scanner;
 
 public class VariablePractice3 {
-	
+	// 0. 메소드 만들기
 	public void inputTest3() {
-		
+		// 1. 스캐너 생성
 		Scanner sc = new Scanner(System.in);
-		
+		// 2. 두 수를 입력받는 가이드 문구 출력 및 입력받기
 		System.out.print("가로 : ");
 		double num1 = sc.nextDouble();
 		
@@ -28,10 +28,10 @@ public class VariablePractice3 {
 		
 		double mul = num1 * num2;
 		double sum = (num1 + num2) * 2; 
-		
+		// 3. 연산결과 출력
 		System.out.println("면적 : " + mul);
 		System.out.println("둘레 : " + sum);
-		
+		// 4. 스캐너 반납
 		sc.close();
 		
 	}

@@ -16,11 +16,11 @@ package com.kh.practice1.func;
 import java.util.Scanner;
 
 public class VariablePractice2 {
-	
+	// 0. 메소드 만들기
 	public void inputTest2() {
-		
+		// 1. 스캐너 생성
 		Scanner sc = new Scanner(System.in);
-		
+		// 2. 두 수를 입력받는 가이드 문구 출력 및 입력받기
 		System.out.print("첫 번째 정수 : ");
 		int num1 = sc.nextInt();
 		
@@ -31,12 +31,12 @@ public class VariablePractice2 {
 		int sub = num1 - num2;
 		int mul = num1 * num2;
 		int div = num1 / num2;
-		
+		// 3. 연산결과 출력
 		System.out.println("더하기 결과 : " + sum);
 		System.out.println("빼기 결과 : " + sub);
 		System.out.println("곱하기 결과 : " + mul);
 		System.out.println("나누기 결과 : " + div);
-		
+		// 4. 스캐너 반납
 		sc.close();
 		
 	}
