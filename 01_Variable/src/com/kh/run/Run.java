@@ -15,17 +15,18 @@ public class Run {
 		//a.decleareVariable();
 		
 		B_KeyboardInput b = new B_KeyboardInput();
-		b.inputTest1();
-		b.inputTest2();
-		b.inputTest3();
-		b.inputTest4();
-		b.charAtTest();
+		//b.inputTest1();
+		//b.inputTest2();
+		//b.inputTest3();
+		//b.inputTest4();
+		//b.charAtTest();
 		
 		C_Printf c = new C_Printf();
 		//c.printfTest();
 		
 		D_Cast d = new D_Cast();
 		//d.autoCasting();
+		d.forceCasting();
 		
 	}
 

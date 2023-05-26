@@ -92,6 +92,46 @@ public class D_Cast {
 		
 		System.out.println("b3 : " + b3);
 		
+		
+		
+	}
+	
+	public void forceCasting() {
+		// 강제형변환 : 큰 크기의 자료형을 작은 크기의 자료형으로 바꾸는 것
+		
+		// double(8byte) => float(4byte)
+		double d1 = 4.0;
+		float f1 = (float) d1;
+		// 강제 형변환을 안 해주면 오류남! 명시적으로 형변환을 해줘야 함
+		
+		// double(8byte) => int(4byte)
+		int iNum = 10;
+		double dNum = 5.89;
+		
+		//int iSum = (double)iNum + dNum; //10.0 + 5.89 => 15.89
+					// 연산결과인 double형이 int형에 대입 불가 => 에러 발생
+		
+		// 에러 해결 방법
+		// 방법 1. 연산결과를 int형으로 강제 형변환
+		int iSum1 = (int) (iNum + dNum); // 10.0 + 5.89 => int(15.89) => 15
+		System.out.println("iSum1 : " + iSum1); 
+		// 형변환 통해서 정수값만 출력된다 => 데이터 손실이 발생한다
+		
+		// 방법 2. double형 값만을 int형으로 강제 형변환
+		int iSum2 = iNum + (int) dNum; // 10 + 5 => 15
+		System.out.println("iSum2 : " + iSum2);
+		
+		// 실수 값을 정수형으로 강제 형변환 시 소수점 아래 부분은 버려짐 (*데이터 손실이 발생할 수 있다.)
+		
+		// 방법 3. 연산결과를 아싸리 double형 변수에 대입
+		double iSum3 = iNum + dNum;
+		System.out.println("iSum3 : " + iSum3);
+		
+		// ** 데이터 손실 테스트
+		int iNum2 = 290; 
+		byte bNum2 = (byte) iNum2;
+		// -128 ~ 127
+		System.out.println("bNum2 : " + bNum2); // 290 - 256 => 34;
 	}
 
 }
