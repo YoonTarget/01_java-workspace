@@ -105,9 +105,8 @@ public class OperatorPractice {
 		System.out.print("나이 : ");
 		int age = sc.nextInt();
 		
-		String result = (age > 19) ? "성인" : 
-			(age <= 19) ? "청소년" :
-				(age <= 13) ? "어린이" : "잘못 입력하셨습니다.";
+		String result = (age <= 13) ? "어린이" : 
+			(age <= 19) ? "청소년" : "성인";
 		
 		System.out.println(result);
 		
@@ -130,7 +129,8 @@ public class OperatorPractice {
 		int sum = (korean + english + math);
 		double average = (korean + english + math) / 3;
 		
-		String result = (sum >= 120 && average >= 60) ? "합격" : "불합격";
+		String result = (korean >= 40 && english >= 40 && math >= 40 
+				&& average >= 60) ? "합격" : "불합격";
 		
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + average);
@@ -166,7 +166,7 @@ public class OperatorPractice {
 		System.out.print("입력 : ");
 		int num3 = sc.nextInt();
 		
-		boolean result = (num2 < num3 || num3 <= num1) ? true : false;
+		boolean result = (num3 <= num1 || num2 < num3) ? true : false;
 		
 		System.out.println(result);
 		
@@ -204,6 +204,7 @@ public class OperatorPractice {
 		
 		System.out.print("B사원의 연봉 : ");
 		int income2 = sc.nextInt();
+		double income_2 = income2 *1.0;
 		
 		System.out.print("C사원의 연봉 : ");
 		int income3 = sc.nextInt();
@@ -211,14 +212,14 @@ public class OperatorPractice {
 		
 		String result1 = (income_1 >= 3000) ?
 				"3000 이상" : "3000 미만";
-		String result2 = (income2 >= 3000) ?
+		String result2 = (income_2 >= 3000) ?
 				"3000 이상" : "3000 미만";
 		String result3 = (income_3 >= 3000) ?
 				"3000 이상" : "3000 미만";
 		
 		System.out.println("A사원의 연봉/연봉+a : " + income + "/" + income_1);
 		System.out.println(result1);
-		System.out.println("B사원의 연봉/연봉+a : " + income2 + "/" + income2);
+		System.out.println("B사원의 연봉/연봉+a : " + income2 + "/" + income_2);
 		System.out.println(result2);
 		System.out.println("C사원의 연봉/연봉+a : " + income3 + "/" + income_3);
 		System.out.println(result3);

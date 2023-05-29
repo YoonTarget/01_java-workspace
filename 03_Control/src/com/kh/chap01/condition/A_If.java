@@ -191,7 +191,7 @@ public class A_If {
 			return; // 해당 이 메소드 자체를 빠져나가는 구문
 		}
 		
-		System.out.println(name + "님은" + result + "입니다.");
+		System.out.println(name + " 님은 " + result + "입니다.");
 				
 		/*
 		if(gender == 'M' || gender == 'm') {
