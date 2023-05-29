@@ -59,6 +59,15 @@ public class C_Printf {
 		
 		System.out.printf("%C %S %S", ch, str, ch); //대문자로 출력된다
 		
+		System.out.println();
+		
+		int age = 20;
+		String name = "Lee";
+		String address = "London";
+		double height = 178.9;
+		
+		System.out.printf("올해 %d살인 %s 씨는 %s에 살며, 키는 %.1fcm이다.", age, name, address, height);
+		
 	}
 
 }

@@ -46,6 +46,8 @@ public class B_InDecrease {
 		int c = 10;
 		int d = c++; // c= 11, d = 10;
 		System.out.printf("c : %d, d : %d\n", c, d);
+		System.out.println(d);
+		System.out.println(c);
 		
 		System.out.println("=================");
 		
