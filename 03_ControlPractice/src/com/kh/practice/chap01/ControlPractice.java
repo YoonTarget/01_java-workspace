@@ -33,7 +33,7 @@ public class ControlPractice {
 			break;
 		case 7 : 
 			System.out.println("프로그램을 종료합니다.");
-			break;
+			return;
 		default : 
 			System.out.println("잘못 입력하셨습니다.");
 			return;
@@ -313,7 +313,7 @@ public class ControlPractice {
 			System.out.println("Fail [출석 회수 부족 (" + attendanceScore + "/20)]");
 		}
 		*/
-		
+		/*
 		if(sum < 70 || absencePercent >= 30) {
 			if(absencePercent >= 30) {
 				System.out.println("결석률 : " + absencePercent);
@@ -337,6 +337,30 @@ public class ControlPractice {
 			System.out.println("총점 : " + sum);
 			System.out.println("결석률 : " + absencePercent);
 			System.out.println("PASS");
+		}
+		*/
+		
+		if(absencePercent < 30 && sum >= 70) {
+			System.out.println("중간고사 점수(20) : " + middleScore2);
+			System.out.println("기말고사 점수(30) : " + finalScore2);
+			System.out.println("과제 점수   (30) : " + homeworkScore2);
+			System.out.println("출석 점수   (20) : " + attendanceScore2);
+			System.out.println("총점 : " + sum);
+			System.out.println("결석률 : " + absencePercent);
+			System.out.println("PASS");
+		}
+		else if(absencePercent < 30) {
+			System.out.println("중간고사 점수(20) : " + middleScore2);
+			System.out.println("기말고사 점수(30) : " + finalScore2);
+			System.out.println("과제 점수   (30) : " + homeworkScore2);
+			System.out.println("출석 점수   (20) : " + attendanceScore2);
+			System.out.println("총점 : " + sum);
+			System.out.println("결석률 : " + absencePercent);
+			System.out.println("Fail [점수미달]");
+		}
+		else {
+			System.out.println("결석률 : " + absencePercent);
+			System.out.println("Fail [출석 회수 부족 (" + attendanceScore + "/20)]");
 		}
 		
 		sc.close();
