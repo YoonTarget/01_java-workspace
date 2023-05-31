@@ -47,6 +47,8 @@ public class B_Continue {
 	public void method3() {
 		// 2~9단까지 출력
 		// 단, 3의 배수단은 빼고 출력
+
+		// 구구단 => 이중 for문
 		for(int dan = 2; dan <= 9; dan++) {
 			if(dan % 3 == 0) {
 				continue;
