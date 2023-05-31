@@ -43,8 +43,10 @@ public class A_For {
 		
 		for(int i = 1; i <= 5; i++/*첫번째 반복에 개입이 되지 않아도 루프가 한 번 돌면 처리한 것으로 간주 => 후증감 적용*/) { // i값이 1부터 5까지 1씩 증가하는 동안 반복을 수행(1, 2, 3, 4, 5 => 5회 수행)
 			// 반복할 코드
+			int a = i++;
 			System.out.println("안녕하세요.");
 			System.out.println(i);
+			System.out.println(a);
 		}
 		
 		for(int i = 0; i <= 4; i++) { // i값이 0부터 4까지 1씩 증가하는 동안 반복을 수행(0, 1, 2, 3, 4 => 5회 수행)
@@ -155,23 +157,26 @@ public class A_For {
 		// 사용자에게 값을 입력 받아 1부터 입력받은 수까지의 합계 출력
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("1이상의 정수 입력 : ");
-		int num = sc.nextInt();
-		
-		if(num > 0) {
-			// 누적합
-			// 1. sum 변수 만들기
-			int sum = 0;
-			// 2. for문 돌리기
-			//  초기식;	   조건식;     증감식
-			for(int i = 1; i <= num; i++) {
-				// 누적합 공식
-				sum += i;
+		while(true) {
+			System.out.print("1이상의 정수 입력 : ");
+			int num = sc.nextInt();
+			
+			if(num > 0) {
+				// 누적합
+				// 1. sum 변수 만들기
+				int sum = 0;
+				// 2. for문 돌리기
+				//  초기식;	   조건식;     증감식
+				for(int i = 1; i <= num; i++) {
+					// 누적합 공식
+					sum += i;
+				}
+				System.out.println("1부터 " + num + "까지의 합은 " + sum + "입니다.");
+				break;
 			}
-			System.out.println("1부터 " + num + "까지의 합은 " + sum + "입니다.");
-		}
-		else {
-			System.out.println("잘못 입력하셨습니다.");
+			else {
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+			}
 		}
 		
 		sc.close();
@@ -249,7 +254,7 @@ public class A_For {
 		
 		// 아하! 마지막 인덱스는 항상 (문자열의 길이 - 1) 이구나...
 		// 추출하고자 하는 인덱스 값 (문자열의 길이 -  1)까지 매번 1씩 증가
-		System.out.println("문자열의 길이 : " + str.length());
+		System.out.print("문자열의 길이 : " + str.length());
 		
 		for(int i = 0; i < str.length(); i++) {
 			System.out.println(str.charAt(i));
