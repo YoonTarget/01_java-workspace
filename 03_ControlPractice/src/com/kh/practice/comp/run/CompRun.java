@@ -1,6 +1,7 @@
 package com.kh.practice.comp.run;
 
 import com.kh.practice.comp.func.CompExample;
+import com.kh.practice.comp.func.RockPaperScissors;
 import com.kh.practice.comp.func.UpAndDown;
 
 public class CompRun {
@@ -14,7 +15,10 @@ public class CompRun {
 		//ce.practice4();
 		
 		UpAndDown ud = new UpAndDown();
-		ud.upDown();
+		//ud.upDown();
+		
+		RockPaperScissors match = new RockPaperScissors();
+		//match.rps();
 
 	}
 

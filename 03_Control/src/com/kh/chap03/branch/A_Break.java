@@ -36,12 +36,13 @@ public class A_Break {
 			String str = sc.nextLine();
 			
 			if(str.equals("exit")) { // 사용자가 입력한 문자가 "exit"일 때
-				System.out.println("exit가 입력되었습니다. 프로그램을 종료합니다.");
+				System.out.println("프로그램을 종료합니다.");
 				break;
 			}
 			else { // 근데 그게 아닐 경우 => 문자열의 길이 출력
 				System.out.println("문자열의 길이 : " + str.length());
 			}
+			System.out.println();
 		}
 		sc.close();
 		
@@ -55,9 +56,10 @@ public class A_Break {
 		while(true) {
 			System.out.print("단(2~9)을 입력해주세요 : ");
 			int dan = sc.nextInt();
+			System.out.println();
 			
 			if(dan >= 2 && dan <= 9)  { // 잘 입력했을 경우
-				System.out.println("=== " + dan +"단 ===\n");
+				System.out.println("=== " + dan +"단 ===");
 				for(int i = 1; i <= 9; i++) {
 					System.out.printf("%d X %d = %d\n", dan , i, (dan * i));
 				}
@@ -66,6 +68,7 @@ public class A_Break {
 			else { // 잘못 입력했을 경우
 				System.out.println("잘못 입력했습니다. 다시 입력해주세요.");
 			}
+			System.out.println();
 		}
 		sc.close();
 		

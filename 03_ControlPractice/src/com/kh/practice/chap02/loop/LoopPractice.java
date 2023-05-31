@@ -361,11 +361,11 @@ public class LoopPractice {
 		System.out.print("정수 입력 : "); // 가이드 문구 출력
 		int num = sc.nextInt(); // 숫자 입력
 		
-		for(int i = 0; i < num; i++) {
-			for(int j = 0; j < num - i; j++) {
+		for(int i = 0; i < num; i++) { // 입력한 숫자만큼의 행을 출력
+			for(int j = 0; j < num - i; j++) { // 입력한 숫자의 개수만큼 출력하고 1씩 감소시켜서 출력
 				System.out.print("*");
 			}
-			System.out.println();
+			System.out.println(); //행 마다 개행을 시켜준다
 		}
 		
 		sc.close(); // 스캐너 종료

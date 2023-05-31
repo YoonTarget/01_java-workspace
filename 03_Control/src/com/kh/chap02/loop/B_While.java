@@ -48,7 +48,6 @@ public class B_While {
 			System.out.print(i++ + " "); // 위의 두 줄을 다음과 같이 한 줄로 줄일 수 있음
 		}
 		
-		
 	}
 
 	public void method3() {
@@ -67,7 +66,7 @@ public class B_While {
 		while(i <= 9) {
 			if(i % 2 == 1) {
 				System.out.print(i + " ");
-				// i++; // 중괄호를 나가는 순간 i = 2가 되는데 2에 해당하는 출력문이 없어서 빈화면이 지속된다 
+				 //i++; // 중괄호를 나가는 순간 i = 2가 되는데 2에 해당하는 출력문이 없어서 빈화면이 지속된다 
 			}
 			i++;
 		}
@@ -77,7 +76,7 @@ public class B_While {
 	public void method4() {
 		// 1부터 랜덤값(1~100)까지의 합계
 		// 랜덤값 구하는 공식 => Math.random() 시작수는 더하고 랜덤수의 개수는 곱한다.
-		// 누적합 공식 => sum 변수 만들고, 반복문 돌리기, sum += i
+		// 누적합 공식 => sum 변수 만들고, 반복문 돌리기, sum += i;
 		int random = (int)(Math.random() * 100 + 1);
 		
 		int sum = 0;

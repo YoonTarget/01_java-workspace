@@ -13,8 +13,11 @@ public class B_Continue {
 		// 1 3 5 7 9
 
 		/*
-		 * for(int i = 1; i <= 9; i++) { if(i % 2 == 1) { // i값이 홀수인 경우
-		 * System.out.print(i + " "); } }
+		 * for(int i = 1; i <= 9; i++) { 
+		 * 		if(i % 2 == 1) { // i값이 홀수인 경우
+		 * 			System.out.print(i + " "); 
+		 * 		} 
+		 * }
 		 */
 
 		for (int i = 1; i <= 10; i++) {
