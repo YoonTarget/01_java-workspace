@@ -116,23 +116,23 @@ public class CompExample {
 					sum++;
 				}
 			}
-			System.out.printf("%s 안에 포함된 %c 개수 : %d", str, ch, sum); // 최종 값 출력
+			System.out.printf("%s 안에 포함된 %c 개수 : %d\n", str, ch, sum); // 최종 값 출력
 			
-			System.out.println("더 하시겠습니까? (Y/N) : ");
-			char answer = sc.nextLine().charAt(0);
+			System.out.println("더 하시겠습니까? (Y/N) : "); // 더 하겠냐고 물음
+			char answer = sc.nextLine().charAt(0); // 답변을 입력
 			
-			if(answer == 'N' || answer == 'n') {
+			if(answer == 'N' || answer == 'n') { // 싫다고 한다면 문장을 출력 후 반복문을 빠져나감
 				System.out.println("프로그램을 종료하겠습니다.");
 				break;
 			}
-			else if(answer == 'Y' || answer == 'y') {
+			else if(answer == 'Y' || answer == 'y') { // 좋다고 한다면 계속 진행
 				System.out.println("계속 진행하겠습니다.");
 			}
 			else {
-				
-			}
+				System.out.println("잘못된 대답입니다. 다시 입력해주세요."); // 잘못된 입력이면 다시 입력
+			}	
 			
-		} while(true);
+		} while(true); // 'N'이나 'n'이 입력이 안 되었다면 무한 반복
 		
 		sc.close(); // 스캐너 종료
 		
