@@ -101,7 +101,7 @@ public class CompExample {
 		 */
 		Scanner sc = new Scanner(System.in); // 스캐너 생성
 		
-		do {
+		while(true) { // 'N'이나 'n'이 입력이 안 되었다면 무한 반복
 			
 			System.out.print("문자열 : "); // 가이드 문구 출력
 			String str = sc.nextLine(); // 문자열 입력
@@ -130,9 +130,31 @@ public class CompExample {
 			}
 			else {
 				System.out.println("잘못된 대답입니다. 다시 입력해주세요."); // 잘못된 입력이면 다시 입력
+				
+				int i = 0; // 싫다고 했을 때 바깥 반복문을 빠져나가기 위한 변수
+				while(true) { // 잘못 입력했을 경우 무한반복
+					System.out.println("더 하시겠습니까? (Y/N) : "); // 더 하겠냐고 물음
+					char answer2 = sc.nextLine().charAt(0); // 답변을 입력
+					
+					if(answer2 == 'N' || answer2 == 'n') { // 싫다고 한다면 문장을 출력 후 반복문을 빠져나감
+						System.out.println("프로그램을 종료하겠습니다.");
+						i++; // i의 값을 1 증가시킴
+						break;
+					}
+					else if(answer2 == 'Y' || answer2 == 'y') { // 좋다고 한다면 문장을 출력 후 반복문을 빠져나감
+						System.out.println("계속 진행하겠습니다.");
+						break;
+					}
+					else {
+						System.out.println("잘못된 대답입니다. 다시 입력해주세요."); // 잘못된 입력이면 다시 입력
+					}
+				}
+				if(i == 1) { // 싫다는 답변을 받았을 때 바깥 반복문을 한 번 더 빠져나가야 하기 때문에 미리 선언한 변수를 활용해서 빠져나간다
+					break;
+				}
 			}	
 			
-		} while(true); // 'N'이나 'n'이 입력이 안 되었다면 무한 반복
+		}
 		
 		sc.close(); // 스캐너 종료
 		

@@ -261,7 +261,7 @@ public class A_Array {
 		System.out.println("arr1이랑 arr2가 같나요? : " + (arr1 == arr2)); // false
 		// 각각의 변수에 담겨있는 주소값을 비교하기 때문!!
 		
-		System.out.println("arr1이랑 arr2가 같나요? : " + (arr1[0] == arr2[0])); // true
+		System.out.println("arr1[0]이랑 arr2[0]이 같나요? : " + (arr1[0] == arr2[0])); // true
 		// 리터럴 값 자체는 서로 같다!!
 		
 	}
