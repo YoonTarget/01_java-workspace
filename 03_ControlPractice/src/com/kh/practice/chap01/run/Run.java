@@ -1,4 +1,6 @@
-package com.kh.practice.chap01;
+package com.kh.practice.chap01.run;
+
+import com.kh.practice.chap01.control.ControlPractice;
 
 public class Run {
 	

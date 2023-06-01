@@ -52,7 +52,7 @@ public class LoopPractice {
 	
 	public void practice3() {
 		// 사용자로부터 한 개의 값을 입력받기
-		// 1부터 그 숫자까지의 모든 숫자를 거꾸러 출력
+		// 1부터 그 숫자까지의 모든 숫자를 거꾸로 출력
 		// 단, 입력한 수는 1보다 크거나 같아야 함
 		Scanner sc = new Scanner(System.in); // 스캐너 생성
 		
@@ -101,14 +101,13 @@ public class LoopPractice {
 		System.out.print("정수를 하나 입력하세요 : "); // 가이드 문구 출력
 		int num = sc.nextInt(); // 정수 값 입력
 		
-		int i = 1; // 맨 처음에 출력되는 1
-		int sum = i; // sum에 i를 대입해서 현재 sum값은 1
+		int sum = 1; // sum값을 1로 선언
 		
 		System.out.print(sum); // 현재 sum값을 먼저 출력
 		
-		for(int j = 2; j <= num; j++) { // 2부터 입력값까지 더하는 for문 생성
-			sum += j; // 누적합 공식
-			System.out.print(" + " + j);
+		for(int i = 2; i <= num; i++) { // 2부터 입력값까지 더하는 for문 생성
+			sum += i; // 누적합 공식
+			System.out.print(" + " + i);
 		}
 		System.out.print(" = " + sum); // sum값 출력
 		
