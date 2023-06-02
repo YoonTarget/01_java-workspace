@@ -14,7 +14,7 @@ public class RunPractice {
 		VariablePractice3 vp3 = new VariablePractice3();
 		VariablePractice4 vp4 = new VariablePractice4();
 		// 별칭.메소드명();
-		//vp.inputTest();
+		vp.inputTest();
 		//vp2.inputTest2();
 		//vp3.inputTest3();
 		//vp4.inputTest4();
