@@ -440,5 +440,126 @@ public class ArrayPractice {
 		}
 			
 	}
+	
+	public void practice14() {
+		// 로또 번호 자동 생성기 프로그램을 작성
+		// 중복 값 없이 오름차순으로 정렬하여 출력
+		
+		
+		
+	}
+	
+	public void practice15() {
+		// 문자열을 입력 받아 문자열에 어떤 문자가 들어갔는지 배열에 저장
+		// 문자의 개수와 함께 출력
+		
+		// 스캐너 생성
+		Scanner sc = new Scanner(System.in);
+		
+		// 가이드 문구 출력
+		System.out.print("문자열 : ");
+		// 문자열 입력
+		String str = sc.nextLine();
+		
+		// 문자열의 길이만큼의 배열의 할당
+		char[] ch = new char[str.length()];
+		
+		// 입력 받은 문자열을 문자 하나하나 배열에 초기화
+		for(int i = 0; i < ch.length; i++) {
+			ch[i] = str.charAt(i);
+		}
+		
+		System.out.print("문자열에 있는 문자 : ");
+		
+		int count = 0;
+
+		for(int i = 0; i < ch.length; i++) {
+			for(int j = 0; j < ch.length; j++) {
+				if(ch[i] == ch[j]) {
+					System.out.print(ch[i] + " ");
+					break;
+				}
+			}
+			
+		}
+		
+		
+//		// 문자 출력
+//		for(int i = 0; i < ch.length; i++) {
+//			System.out.print(ch[i] + " ");
+//		}
+//		System.out.println();
+//		System.out.println("문자 개수 : " + ch.length);
+		
+		
+		// 스캐너 종료
+		sc.close();
+		
+	}
+	
+	public void practice16() {
+		// 사용자가 입력한 배열의 길이만큼의 문자열 배열을 선언 및 할당
+		// 배열의 인덱스에 넣을 값 역시 사용자가 입력하여 초기화
+		// 단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할건지
+		// 늘린 곳에 어떤 데이터를 넣을 것인지 받아라
+		// 사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력
+		
+		// 스캐너 생성
+		Scanner sc = new Scanner(System.in);
+		
+		// 가이드 문구 출력
+		System.out.print("배열의 크기를 입력하세요 : ");
+		
+		while(true) {
+			// 배열의 크기 입력
+			int num = sc.nextInt();
+			
+			sc.nextLine();
+			
+			// 입력한 수만큼 배열 선언 및 할당
+			String[] arr = new String[num];
+			
+			// 가이드 문구 출력, 인덱스에 넣을 값 입력 및 초기화
+			for(int i = 0; i < arr.length; i++) {
+				System.out.print((i + 1) + "번째 문자열 : ");
+				String str = sc.nextLine();
+				arr[i] = str;
+			}
+			
+			int count = 0;
+			while(true) {
+				// 더 넣을지 묻는 가이드 문구 출력
+				System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+				// 답변 입력
+				char ch = sc.nextLine().charAt(0);
+				
+				// 노일 경우, 지금까지의 값을 출력 후 반복문 나감
+				if(ch == 'N' || ch == 'n') {
+					for(int i = 0; i < arr.length; i++) {
+						System.out.print(arr[i] + " ");
+					}
+					count++;
+					break;
+				}
+				// 예스일 경우 무한 반복
+				else if(ch == 'Y' || ch == 'y') {
+					System.out.print("더 입력하고 싶은 개수 : ");
+					break;
+				}
+				// 잘못 입력했을 경우, 
+				else {
+					System.out.println("잘못 입력하셨습니다.");
+				}
+			}
+			if(count == 1) {
+				break;
+			}
+		}
+		
+		
+		// 스캐너 종료
+		sc.close();
+		
+	}
 
 }
