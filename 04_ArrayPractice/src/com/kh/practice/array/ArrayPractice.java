@@ -420,10 +420,10 @@ public class ArrayPractice {
 				arr[i] = (int)(Math.random() * 10 + 1);
 			}
 			
-//			for(int i = 0; i < arr.length; i++) {
-//				System.out.print(arr[i] + " ");
-//			}
-//			System.out.println();
+			for(int i = 0; i < arr.length; i++) {
+				System.out.print(arr[i] + " ");
+			}
+			System.out.println();
 			
 			// 각각의 인덱스 값과 1 ~ 10 사이의 수를 비교
 			for(int j = 1; j <= 10; j++) {
@@ -445,7 +445,47 @@ public class ArrayPractice {
 		// 로또 번호 자동 생성기 프로그램을 작성
 		// 중복 값 없이 오름차순으로 정렬하여 출력
 		
+		// 스캐너 생성
+		Scanner sc = new Scanner(System.in);
 		
+		// 배열 할당
+		int[] arr = new int[6];
+		
+		// 랜덤값 생성 후 배열에 초기화
+//		arr[0] = (int)(Math.random() * 7 + 1);
+//		arr[1] = (int)(Math.random() * 7 + 8);
+//		arr[2] = (int)(Math.random() * 7 + 15);
+//		arr[3] = (int)(Math.random() * 8 + 22);
+//		arr[4] = (int)(Math.random() * 8 + 30);
+//		arr[5] = (int)(Math.random() * 8 + 38);
+		
+		for(int i = 0; i < 3; i++) {
+			arr[i] = (int)(Math.random() * 7 + (7 * i) + 1);
+		}
+		
+		for(int i = 3; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 8 + (8 * i) - 2);
+		}
+		
+//		// 중복값 제거
+//		for(int j = 1; j <= 45; j++) {
+//			for(int i = 0; i < arr.length; i++) {
+//				if(arr[i] == j) {
+//					arr[i] = j;
+//					break;
+//				}
+//				else {
+//					arr[i] = (int)(Math.random() * 45 + 1);
+//				}
+//			}
+//		}
+		
+		for(int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		
+		// 스캐너 종료
+		sc.close();
 		
 	}
 	
@@ -510,18 +550,29 @@ public class ArrayPractice {
 		// 가이드 문구 출력
 		System.out.print("배열의 크기를 입력하세요 : ");
 		
+		int sum = 0;
+		
 		while(true) {
 			// 배열의 크기 입력
 			int num = sc.nextInt();
 			
+			sum += num;
+			
 			sc.nextLine();
 			
 			// 입력한 수만큼 배열 선언 및 할당
-			String[] arr = new String[num];
+			String[] arr = new String[sum];
 			
 			// 가이드 문구 출력, 인덱스에 넣을 값 입력 및 초기화
 			for(int i = 0; i < arr.length; i++) {
 				System.out.print((i + 1) + "번째 문자열 : ");
+				String str = sc.nextLine();
+				arr[i] = str;
+			}
+			
+			// 추가할 인덱스에 넣을 값 입력 및 초기화
+			for(int i = num; i < arr.length; i++) {
+				System.out.print((num + 1) + "번째 문자열 : ");
 				String str = sc.nextLine();
 				arr[i] = str;
 			}
