@@ -6,7 +6,7 @@ public class Product {
 	private int price;
 	private String brand;
 	
-	public void setPName(String pName) {
+	public void setpName(String pName) {
 		this.pName = pName;
 	}
 	
@@ -18,7 +18,7 @@ public class Product {
 		this.brand = brand;
 	}
 	
-	public String getPName() {
+	public String getpName() {
 		return pName;
 	}
 	

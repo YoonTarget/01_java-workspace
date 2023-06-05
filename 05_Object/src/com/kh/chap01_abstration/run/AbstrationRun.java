@@ -107,7 +107,7 @@ public class AbstrationRun {
 		System.out.println(park.name + " 님의 나이는 " + park.age + "살이고, 키는 " + park.height + "cm입니다.");
 		
 		/*
-		 * 필드르 public 접근제한자로 작성
+		 * 필드를 public 접근제한자로 작성
 		 * => 필드에 직접적으로 접근해서 값 대입하거나 값을 가져올 수 있음!!
 		 * => 외부에서 함부로 값을 변질시키거나 조회권한이 없는 사람이 가져올 수 있는 문제 발생!!
 		 * 		>> 캡슐화 작업을 할거임!!

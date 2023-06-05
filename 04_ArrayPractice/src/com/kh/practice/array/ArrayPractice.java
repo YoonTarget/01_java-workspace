@@ -689,7 +689,7 @@ public class ArrayPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		// 문자열 입력
-		System.out.println("문자열 : ");
+		System.out.print("문자열 : ");
 		String str = sc.nextLine();
 		
 		// 문자열 길이만큼 배열 할당
@@ -698,28 +698,117 @@ public class ArrayPractice {
 		// 문자 개수를 파악할 변수
 		int count = 0;
 		
+		// 문자열 출력
+		System.out.print("문자열에 있는 문자 : ");
+
 		// 배열에 값 초기화
 		for(int i = 0; i < arr.length; i++) {
 			arr[i] = str.charAt(i);
 			
+			// 중복된 값을 걸러내는 스위치
 			boolean flag = true;
 			
+			// i값과 i-1값까지를 비교해서
 			for(int j = 0; j < i; j++) {
+				// 중복된 값이 있다면
 				if(arr[i] == arr[j]) {
+					// 스위치를 끈다
 					flag = false;
 				}
 			}
+			// 스위치가 켜져있다면
+			if(flag) {
+				// 카운트를 하나씩 올리고
+				count++;
+				// i가 0인 경우에는 값을 그냥 출력하고
+				if(i == 0) {
+					System.out.print(arr[i]);
+				}
+				// 나머지 값들은 앞에 ,를 붙이고 출력한다
+				else {
+					System.out.print(", " + arr[i]);
+				}
+			}
 		}
+		// 개행을 해주고
+		System.out.println();
+		// 중복된 값이 제거된 문자 개수를 출력한다
+		System.out.println("문자 개수 : " + count);
 		
-		System.out.print("문자열에 있는 문자 : ");
-		
+		// 스캐너 종료
 		sc.close();
 		
 	}
 	
 	public void practice16_1() {
 		
+		// 스캐너 생성
+		Scanner sc = new Scanner(System.in);
 		
+		// 배열 크기 정하기
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int num = sc.nextInt();
+		
+		sc.nextLine();
+		
+		// 문자열 배열 선언 및 할당
+		String[] origin = new String[num];
+		
+		// 인덱스 값 초기화
+		for(int i = 0; i < origin.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			origin[i] = sc.nextLine();
+		}
+		
+		
+		while(true) {
+			// 값을 더 입력할건지 묻고, 입력
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0);
+			
+			// Y/N로 나누기
+			if(ch == 'y' || ch == 'Y') {
+				// 몇개를 더 입력할건지 묻고, 입력
+				System.out.print("더 입력하고 싶은 개수 : ");
+				num = sc.nextInt();
+				
+				sc.nextLine();
+				
+				// 복사본 배열 선언 및 할당
+				String[] copy = new String[origin.length + num];
+				
+				// 원본 배열의 인덱스 복사
+				copy = Arrays.copyOf(origin, copy.length);
+				
+				// 추가된 배열만큼 입력
+				for(int i = origin.length; i < copy.length; i++) {
+					System.out.print((i + 1) + "번째 문자열 : ");
+					copy[i] = sc.nextLine();
+				}
+				
+				// 원본 배열에 복사본 배열을 얕은 복사
+				origin = copy;
+			}
+			else if(ch == 'n' || ch == 'N') {
+				System.out.print("[");
+				for(int i = 0; i < origin.length; i++) {
+					if(i == 0) {
+						System.out.print(origin[i]);
+					}
+					else {
+						System.out.print(", " + origin[i]);
+					}
+				}
+				System.out.print("]");
+				break;
+			}
+			else {
+				System.out.println("잘못 입력하셨습니다.");
+			}
+		}
+		
+		// 스캐너 종료
+		sc.close();
 		
 	}
 
