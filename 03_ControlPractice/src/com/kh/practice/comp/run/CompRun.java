@@ -12,7 +12,7 @@ public class CompRun {
 		//ce.practice1();
 		//ce.practice2();
 		//ce.practice3();
-		ce.practice4();
+		//ce.practice4();
 		
 		UpAndDown ud = new UpAndDown();
 		//ud.upDown();

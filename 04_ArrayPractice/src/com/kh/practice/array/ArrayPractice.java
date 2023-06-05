@@ -235,12 +235,29 @@ public class ArrayPractice {
 			// 3 이상의 홀수 자연수 입력
 			int num = sc.nextInt();
 			
-			// 값이 범위 안이라면
+			// num이 3 이상인 홀수라면
 			if(num >= 3 && num % 2 == 1) {
 				// 입력된 수만큼 배열 할당
 				int[] arr = new int[num];
 				
+				// 5 입력 시 => {1, 2, 3, 2, 1}		=> 2번 인덱스까지 증가 그 이후로 감소
+				// 7 입력 시 => {1, 2, 3, 4, 3, 2, 1}	=> 3번 인덱스까지 증가 그 이후로 감소
+				// 9 입력 시 => 						=> 4번 인덱스까지 증가 그 이후로 감소
+				//									=> 배열의 길이 / 2 인덱스까지 증가 그 이후로 감소
+				
+				
 				// 값을 초기화
+//				int value = 1;
+//				for(int i = 0; i < arr.length; i++) { // 값 대입
+//					arr[i] = value;
+//					if(i < arr.length / 2) {
+//						value++;
+//					}
+//					else {
+//						value--;
+//					}
+//				}
+				
 				// 중간까지는 1씩 오름차순
 				for(int i = 0; i <= (arr.length / 2); i++) {
 					arr[i] = i + 1;
@@ -390,21 +407,38 @@ public class ArrayPractice {
 		}
 		System.out.println();
 		
-		// 최대값 구하기
-		for(int i = 0; i < arr.length; i++) {
-			if(arr[0] < arr[i]) {
-				arr[0] = arr[i];
-			}
-		}
-		System.out.println("최대값 : " + arr[0]);
+//		// 최대값 구하기
+//		for(int i = 0; i < arr.length; i++) {
+//			if(arr[0] < arr[i]) {
+//				arr[0] = arr[i];
+//			}
+//		}
+//		System.out.println("최대값 : " + arr[0]);
+//		
+//		// 최소값 구하기
+//		for(int i = 0; i < arr.length; i++) {
+//			if(arr[0] > arr[i]) {
+//				arr[0] = arr[i];
+//			}
+//		}
+//		System.out.println("최소값 : " + arr[0]);
 		
-		// 최소값 구하기
+		// 오름차순으로 정리
+		int temp = 0;
+		
 		for(int i = 0; i < arr.length; i++) {
-			if(arr[0] > arr[i]) {
-				arr[0] = arr[i];
+			for(int j = 1; j < arr.length; j++) {
+				if(arr[j -1] > arr[j]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j -1] = temp;
+				}
 			}
 		}
-		System.out.println("최소값 : " + arr[0]);
+		//최대값, 최소값 출력
+		System.out.print("최대값 : " + arr[arr.length -1]);
+		System.out.println();
+		System.out.print("최소값 : " + arr[0]);
 		
 	}
 	
@@ -416,24 +450,27 @@ public class ArrayPractice {
 		int[] arr = new int[10];
 		
 			// 난수 생성 후 배열에 초기화
+			// 탐색?? 반복문!! for문
 			for(int i = 0; i < arr.length; i++) {
 				arr[i] = (int)(Math.random() * 10 + 1);
-			}
-			
-			for(int i = 0; i < arr.length; i++) {
-				System.out.print(arr[i] + " ");
-			}
-			System.out.println();
-			
-			// 각각의 인덱스 값과 1 ~ 10 사이의 수를 비교
-			for(int j = 1; j <= 10; j++) {
-				for(int i = 0; i < arr.length; i++) {
-					if(arr[j - 1] == arr[i]) {
-						arr[i] = j;
-						break;
+				for(int j = 0; j < i; j++) { // 2 2 // 핵심
+					if(arr[i] == arr[j]) {
+						// 랜덤한 수를 다시 만드는 코드 작성
+						i--;
 					}
 				}
 			}
+			
+//			// 각각의 인덱스 값과 1 ~ 10 사이의 수를 비교
+//			for(int j = 1; j <= 10; j++) {
+//				for(int i = 0; i < arr.length; i++) {
+//					if(arr[j - 1] == arr[i]) {
+//						arr[i] = j;
+//						break;
+//					}
+//				}
+//			}
+			
 			// 인덱스 값 출력
 			for(int i = 0; i < arr.length; i++) {
 				System.out.print(arr[i] + " ");
@@ -459,13 +496,13 @@ public class ArrayPractice {
 //		arr[4] = (int)(Math.random() * 8 + 30);
 //		arr[5] = (int)(Math.random() * 8 + 38);
 		
-		for(int i = 0; i < 3; i++) {
-			arr[i] = (int)(Math.random() * 7 + (7 * i) + 1);
-		}
-		
-		for(int i = 3; i < arr.length; i++) {
-			arr[i] = (int)(Math.random() * 8 + (8 * i) - 2);
-		}
+//		for(int i = 0; i < 3; i++) {
+//			arr[i] = (int)(Math.random() * 7 + (7 * i) + 1);
+//		}
+//		
+//		for(int i = 3; i < arr.length; i++) {
+//			arr[i] = (int)(Math.random() * 8 + (8 * i) - 2);
+//		}
 		
 //		// 중복값 제거
 //		for(int j = 1; j <= 45; j++) {
@@ -479,7 +516,28 @@ public class ArrayPractice {
 //				}
 //			}
 //		}
+		// 중복값 제거한 랜덤값 생성 후 배열에 초기화
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 45 + 1);
+			for(int j = 0; j < i; j++) {
+				if(arr[j] == arr[i]) {
+					i--;
+				}
+			}
+		}
+		// 오름차순으로 정렬
+		int temp = 0;
 		
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 1; j < arr.length; j++) {
+				if(arr[j - 1] > arr[j]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j -1] = temp;
+				}
+			}
+		}
+		// 배열 출력
 		for(int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
@@ -502,27 +560,47 @@ public class ArrayPractice {
 		String str = sc.nextLine();
 		
 		// 문자열의 길이만큼의 배열의 할당
-		char[] ch = new char[str.length()];
+		char[] arr = new char[str.length()];
 		
-		// 입력 받은 문자열을 문자 하나하나 배열에 초기화
-		for(int i = 0; i < ch.length; i++) {
-			ch[i] = str.charAt(i);
-		}
-		
-		System.out.print("문자열에 있는 문자 : ");
-		
+		// 문자 개수를 출력할 변수 선언 및 초기화
 		int count = 0;
 
-		for(int i = 0; i < ch.length; i++) {
-			for(int j = 0; j < ch.length; j++) {
-				if(ch[i] == ch[j]) {
-					System.out.print(ch[i] + " ");
-					break;
+		System.out.print("문자열에 있는 문자 : ");
+		
+		// char 배열에 값 대입
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = str.charAt(i);
+			
+			// 중복제거?? 출력.. apple => a p l e
+			boolean flag = true; // 스위치처럼 활용(껐다 켰다) // 핵심
+			
+			for(int j = 0; j < i; j++) {
+				if(arr[j] == arr[i]) { // apple a p p
+					flag = false;
 				}
 			}
-			
+			if(flag/*flag == true*/) {
+				count++;
+				if(i == 0) {
+					System.out.print(arr[i]);
+				}
+				else {
+					System.out.print(", " + arr[i]);
+				}
+			}
 		}
+		System.out.println();
+		System.out.print("문자 개수 : " + count);
 		
+//		for(int i = 0; i < arr.length; i++) {
+//			for(int j = 0; j < arr.length; j++) {
+//				if(arr[i] == arr[j]) {
+//					System.out.print(arr[i] + " ");
+//					break;
+//				}
+//			}
+//			
+//		}
 		
 //		// 문자 출력
 //		for(int i = 0; i < ch.length; i++) {
@@ -530,7 +608,6 @@ public class ArrayPractice {
 //		}
 //		System.out.println();
 //		System.out.println("문자 개수 : " + ch.length);
-		
 		
 		// 스캐너 종료
 		sc.close();
@@ -550,66 +627,99 @@ public class ArrayPractice {
 		// 가이드 문구 출력
 		System.out.print("배열의 크기를 입력하세요 : ");
 		
-		int sum = 0;
+		// 배열의 크기 입력
+		int num = sc.nextInt();
 		
-		while(true) {
-			// 배열의 크기 입력
-			int num = sc.nextInt();
-			
-			sum += num;
-			
-			sc.nextLine();
-			
-			// 입력한 수만큼 배열 선언 및 할당
-			String[] arr = new String[sum];
-			
-			// 가이드 문구 출력, 인덱스에 넣을 값 입력 및 초기화
-			for(int i = 0; i < arr.length; i++) {
-				System.out.print((i + 1) + "번째 문자열 : ");
-				String str = sc.nextLine();
-				arr[i] = str;
-			}
-			
-			// 추가할 인덱스에 넣을 값 입력 및 초기화
-			for(int i = num; i < arr.length; i++) {
-				System.out.print((num + 1) + "번째 문자열 : ");
-				String str = sc.nextLine();
-				arr[i] = str;
-			}
-			
-			int count = 0;
-			while(true) {
-				// 더 넣을지 묻는 가이드 문구 출력
-				System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
-				// 답변 입력
-				char ch = sc.nextLine().charAt(0);
-				
-				// 노일 경우, 지금까지의 값을 출력 후 반복문 나감
-				if(ch == 'N' || ch == 'n') {
-					for(int i = 0; i < arr.length; i++) {
-						System.out.print(arr[i] + " ");
-					}
-					count++;
-					break;
-				}
-				// 예스일 경우 무한 반복
-				else if(ch == 'Y' || ch == 'y') {
-					System.out.print("더 입력하고 싶은 개수 : ");
-					break;
-				}
-				// 잘못 입력했을 경우, 
-				else {
-					System.out.println("잘못 입력하셨습니다.");
-				}
-			}
-			if(count == 1) {
-				break;
-			}
+		sc.nextLine();
+		
+		// 입력한 수만큼 배열 선언 및 할당
+		String[] origin = new String[num];
+		String[] copy = null;
+		
+		// 가이드 문구 출력, 인덱스에 넣을 값 입력 및 초기화
+		for(int i = 0; i < origin.length; i++) {
+			System.out.printf("%d번째 문자열 : ", i + 1);
+			origin[i] = sc.nextLine();
 		}
 		
+		while(true) {
+			System.out.print("값을 더 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0); // y Y n N
+			
+			if(ch == 'y' || ch == 'Y') { // 더 입력하겠다는 경우
+				System.out.print("더 입력하고 싶은 개수 : ");
+				num = sc.nextInt();
+				
+				sc.nextLine();
+				
+				copy = Arrays.copyOf(origin, origin.length + num); // 핵심
+				
+				for(int i = origin.length; i < copy.length; i++) {
+					System.out.printf("%d번째 문자열 : ", i + 1);
+					copy[i] = sc.nextLine();
+				}
+				
+				origin = copy; // 핵심
+				
+			}
+			else { // 그만하는 경우
+				System.out.print("[");
+				for(int i = 0; i < origin.length; i++) {
+					if(i == origin.length - 1) { // 마지막 인덱스인 경우
+						System.out.printf("%s", origin[i]);
+					}
+					else {
+						System.out.printf("%s, ", origin[i]);
+					}
+				}
+				System.out.print("]");
+				break;
+			}
+			
+		}
 		
 		// 스캐너 종료
 		sc.close();
+		
+	}
+	
+	public void practice15_1() {
+		
+		// 스캐너 생성
+		Scanner sc = new Scanner(System.in);
+		
+		// 문자열 입력
+		System.out.println("문자열 : ");
+		String str = sc.nextLine();
+		
+		// 문자열 길이만큼 배열 할당
+		char[] arr = new char[str.length()];
+		
+		// 문자 개수를 파악할 변수
+		int count = 0;
+		
+		// 배열에 값 초기화
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = str.charAt(i);
+			
+			boolean flag = true;
+			
+			for(int j = 0; j < i; j++) {
+				if(arr[i] == arr[j]) {
+					flag = false;
+				}
+			}
+		}
+		
+		System.out.print("문자열에 있는 문자 : ");
+		
+		sc.close();
+		
+	}
+	
+	public void practice16_1() {
+		
+		
 		
 	}
 

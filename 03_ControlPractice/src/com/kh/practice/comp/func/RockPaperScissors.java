@@ -44,6 +44,7 @@ public class RockPaperScissors {
 			if(me.equals("exit")) { // exit가 입력된다면 전적을 계산하고 반복문을 빠져나가기
 				System.out.printf("%d전 %d승 %d무 %d패", match, win, draw, lose);
 				break;
+				// return; // 메소드 밖을 빠져나가는 구문
 			}
 			else if(me.equals("가위") || me.equals("바위") // 가위 또는 바위 또는 보가 입력된다면 결과를 출력
 					|| me.equals("보")) {
@@ -78,6 +79,29 @@ public class RockPaperScissors {
 			System.out.println(); // 경기마다 개행을 통해 보기 쉽게 한다
 		}
 		sc.close(); // 스캐너 종료
+		
+	}
+	
+	public void rps2() {
+		
+		Scanner sc = new Scanner(System.in);
+		// 필요한 자원 => 변수
+		int total = 0; // 전
+		int win = 0; // 승
+		int tie = 0; // 무
+		int lose = 0; // 패
+		
+		System.out.print("당신의 이름을 입력해 주세요 : ");
+		String name = sc.nextLine();
+		
+		while(true) {
+			System.out.print("가위바위보 : ");
+			String rps = sc.nextLine(); // exit
+			
+			break;
+		}
+		
+		sc.close();
 		
 	}
 

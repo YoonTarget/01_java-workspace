@@ -304,6 +304,7 @@ public class LoopPractice {
 				
 				if(op2 == '/' && num2 == 0) { // 연산자가 나누기이면서 두번째 정수가 0인 경우
 					System.out.println("0으로 나눌 수 없습니다. 다시 입력해 주세요.");
+					// continue;
 				}
 				else { // 정상적인 연산자인 경우
 					switch(op2) {
@@ -331,6 +332,24 @@ public class LoopPractice {
 			
 		}
 		sc.close(); // 스캐너 종료
+		
+	}
+	
+	public void practice12_1() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			System.out.print("연산자(+, -, *, /, %) : ");
+			String op = sc.nextLine();
+
+			if(op.equals("exit")) {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			}	
+		}
+		
+		sc.close();
 		
 	}
 	
