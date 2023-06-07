@@ -22,11 +22,11 @@ public class Run {
 		//b.charAtTest();
 		
 		C_Printf c = new C_Printf();
-		//c.printfTest();
+		c.printfTest();
 		
 		D_Cast d = new D_Cast();
 		//d.autoCasting();
-		d.forceCasting();
+		//d.forceCasting();
 		
 	}
 
