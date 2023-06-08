@@ -19,14 +19,18 @@ public class ProductTest {
 		System.out.println("=========================================");
 		
 		// 각 객체의 가격을 모두 120만원으로 변경
-		p1.setPrice(1200000);
-		p2.setPrice(1200000);
-		p3.setPrice(1200000);
+		int price = 1200000;
+		
+		p1.setPrice(price);
+		p2.setPrice(price);
+		p3.setPrice(price);
 		
 		// 부가세율도 모두 0.05로 변경
-		p1.setTax(0.05);
-		p2.setTax(0.05);
-		p3.setTax(0.05);
+		double tax = 0.05;
+		
+		p1.setTax(tax);
+		p2.setTax(tax);
+		p3.setTax(tax);
 		
 		// 객체가 가진 필드 값 출력 확인
 		System.out.println(p1.information());
@@ -38,13 +42,14 @@ public class ProductTest {
 		// 각 객체의 가격에 부가세율을 적용한 실제 가격을 계산해서 출력함
 		// ** 실제가격 = 가격 + (가격 * 부가세율)
 		System.out.println("상품명 : " + p1.getProductName());
-		System.out.println("부가세 포함 가격 : " + (p1.getPrice() + (int)(p1.getPrice() * p1.getTax())) + "원");
+		p1.setPrice(p1.getPrice() + (int)(p1.getPrice() * p1.getTax()));
+		System.out.println("부가세 포함 가격 : " + p1.getPrice() + "원");
 
 		System.out.println("상품명 : " + p2.getProductName());
-		System.out.println("부가세 포함 가격 : " + (p2.getPrice() + (int)(p2.getPrice() * p1.getTax())) + "원");
+		System.out.println("부가세 포함 가격 : " + (p2.getPrice() + (int)(p2.getPrice() * p2.getTax())) + "원");
 		
 		System.out.println("상품명 : " + p3.getProductName());
-		System.out.println("부가세 포함 가격 : " + (p3.getPrice() + (int)(p3.getPrice() * p1.getTax())) + "원");
+		System.out.println("부가세 포함 가격 : " + (p3.getPrice() + (int)(p3.getPrice() * p3.getTax())) + "원");
 		
 	}
 
