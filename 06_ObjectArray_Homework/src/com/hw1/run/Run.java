@@ -18,7 +18,7 @@ public class Run {
 		// 2번 인덱스에는 매개변수 10개짜리 생성자를 이용하여 객체 생성
 		emp[2] = new Employee(2, "강말순", "교육부", "강사", 20, 'F', 1000000, 0.01, "010-1111-2222", "서울 마곡");
 		
-		// 객체 출력
+		// 생성한 객체 출력
 		for(int i = 0; i < emp.length; i++) {
 			System.out.println("emp[" + i + "] : " + emp[i].information());
 		}
@@ -26,7 +26,7 @@ public class Run {
 		System.out.println("===============================================================================");
 		
 		// 3개의 객체 중 값이 없는 필드에 각각 값을 넣은 뒤 다시 출력(임의로)
-		emp[0].setEmpName("김말똥");
+		emp[0].setEmpName("강말똥");
 		emp[0].setDept("영업부");
 		emp[0].setJob("팀장");
 		emp[0].setAge(30);
@@ -49,18 +49,16 @@ public class Run {
 		
 		// 직원 각각의 보너스가 적용된 1년 연봉을 계산하여 출력
 		// 보너스가 적용된 연봉 = (급여 +(급여 *보너스 포인트)) * 12
+		int total = 0;
 		for(int i = 0; i < emp.length; i++) {
 			emp[i].setSalary((int)((emp[i].getSalary() + (emp[i].getSalary() * emp[i].getBonusPoint())) * 12));
 			System.out.println(emp[i].getEmpName() + "의 연봉 : " + emp[i].getSalary() + "원");
+			total += emp[i].getSalary();
 		}
 		
 		System.out.println("===============================================================================");
 		
 		// 3명 직원의 연봉 평균을 구하여 출력
-		int total = 0;
-		for(int i = 0; i < emp.length; i++) {
-			total += emp[i].getSalary();
-		}
 		System.out.println("직원들의 연봉 평균 : " + (total / emp.length) + "원");
 	}
 

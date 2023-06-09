@@ -30,6 +30,10 @@ public class OverloadingTest {
 		
 	}
 	
+	public void test(int a, int b, int c) {
+		
+	}
+	
 	/*
 	public void test(int c, int d) {
 		
@@ -39,7 +43,7 @@ public class OverloadingTest {
 	*/
 	
 	public void test(String str) {
-		
+		System.out.println(str);
 	}
 	
 	/*
