@@ -33,7 +33,8 @@ public class Point {
 	
 	// x, y 좌표 값을 출력하는 메소드
 	public void draw() {
-		System.out.println("x : " + x + ", y : " + y);
+		System.out.println("x : " + x);
+		System.out.println("y : " + y);
 	}
 
 }

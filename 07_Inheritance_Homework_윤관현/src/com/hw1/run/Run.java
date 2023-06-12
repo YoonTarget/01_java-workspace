@@ -34,9 +34,8 @@ public class Run {
 		
 		int count = 0;
 		
-		System.out.println("정보를 입력해 주세요.");
-		
 		while(true) {
+			System.out.println((count + 1) + "번째 사원의 정보를 입력해 주세요.");
 			
 			System.out.print("이름 : ");
 			String name = sc.nextLine();
@@ -64,7 +63,7 @@ public class Run {
 			count++;
 			
 			// 10명의 정보가 모두 입력됐다면 입력을 종료
-			if(count == 3) {
+			if(count == 10) {
 				System.out.println(count + "명의 사원 정보가 모두 기록되었습니다.");
 				break;
 			}
@@ -81,6 +80,7 @@ public class Run {
 				}
 				// ‘n’일 경우 더 이상 그만 입력 받도록 …
 				else if(answer == 'N' || answer == 'n') {
+					System.out.println(count + "명의 사원 정보를 출력합니다.");
 					flag = false;
 					break;
 				}
@@ -94,7 +94,6 @@ public class Run {
 		}
 		
 		// 배열에 담긴 사원들의 정보를 모두 출력
-		System.out.println("정보를 출력합니다.");
 		for(int i = 0; i < count; i++) {
 			System.out.println(e[i]);
 		}

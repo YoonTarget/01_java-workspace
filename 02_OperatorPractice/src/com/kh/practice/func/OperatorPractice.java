@@ -5,16 +5,23 @@ import java.util.Scanner;
 public class OperatorPractice {
 	
 	public void practice1() {
+		// 키보드로 입력 받은 하나의 정수가 양수면 "양수다"
+		// 양수가 아니면 "양수가 아니다" 출력
 		
+		// 스캐너 생성
 		Scanner sc = new Scanner(System.in);
 		
+		// 정수 입력
 		System.out.print("정수 : ");
 		int num = sc.nextInt();
 		
+		// 정수의 값이 양수인지 아닌지 판별
 		String result = (num > 0) ? "양수다." : "양수가 아니다.";
 		
+		// 결과 출력
 		System.out.println(result);
 		
+		// 스캐너 종료
 		sc.close();
 		
 	}
