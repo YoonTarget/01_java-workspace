@@ -15,5 +15,5 @@ public class FieldTest3 {
 	
 	// 상수필드 (static final) : 프로그램 시작 시 값이 저장되면 더이상 변경되지 않고, 공유하면서 사용할 목적
 	public static final String STA_FIN = "static_final";
-
+	
 }

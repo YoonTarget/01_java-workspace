@@ -69,11 +69,11 @@ public class ElectronicRun {
 		Tablet t = (Tablet)es.select(2);
 		*/
 		
+		// 이런 걸 다운 캐스팅이라고 한다!!
+
 		Electronic d = es.select(0);
 		Electronic n = es.select(1);
 		Electronic t = es.select(2);
-		
-		// 이런 걸 다운 캐스팅이라고 한다!!
 		
 		// 위아래 방법 둘 다 가능
 		
