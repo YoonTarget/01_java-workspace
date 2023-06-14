@@ -105,8 +105,8 @@ public class PolyRun {
 		
 		System.out.println("===================================");
 		
-		//Parent pp = new Child1();
-		//pp.print();
+		Parent pp = new Child1();
+		pp.print();
 		
 		/*
 		 * 동적 바인딩 : 프로그램이 실행되기 전에는 컴파일이 되면서 정적 바인딩 (레퍼런스 타입의 메소드를 가리킴)

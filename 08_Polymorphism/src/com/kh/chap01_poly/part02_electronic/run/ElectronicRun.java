@@ -11,41 +11,38 @@ public class ElectronicRun {
 
 	public static void main(String[] args) {
 		
-		// 실행용 클래스는 납품업체라고 생각!!
-		
-		/*
-		// 1. 다형성 적용 안 했을 경우(electronicShop1)
-		ElectronicShop1 es = new ElectronicShop1();
-		// es에서 마련해놓은 desk, note, tab 이라는 필드에
-		// 객체를 생성해서 넣어주기 위해서 우선 es 생성!!
-		
-		// 메소드를 써서 생성하겠음
-		// 먼저 필요한 메소드를 생각해보자
-		
-		// 아직은 없는 메소드
-		// 추가용 메소드 => insert
-		// 데스크탑이라는 객체를 생성해서 넘기는 메소드
-		
-		es.insert(new Desktop("Samsung", "데땁", 1200000, "gtx1070"));
-		
-		// 노트북이라는 객체를 생성해서 넘기는 메소드
-		es.insert(new NoteBook("LG", "Gram", 2000000, 4));
-		
-		// 태블릿이라는 객체를 생성해서 넘기는 메소드
-		es.insert(new Tablet("Apple", "I-Pad", 800000, false));
-		
-		// 가게에 해당 객체들이 잘 생성되어 있는지를 확인해보자
-		// 조회용 메소드 => select();
-		
-		//String desk = es.selectDesktop();
-		Desktop d = es.selectDesktop();
-		NoteBook n = es.selectNoteBook();
-		Tablet t = es.selectTablet();
-		
-		System.out.println(d);
-		System.out.println(n);
-		System.out.println(t);
-		*/
+//		// 실행용 클래스는 납품업체라고 생각!!
+//		
+//		// 1. 다형성 적용 안 했을 경우(electronicShop1)
+//		ElectronicShop1 es = new ElectronicShop1();
+//		// es에서 마련해놓은 desk, note, tab 이라는 필드에
+//		// 객체를 생성해서 넣어주기 위해서 우선 es 생성!!
+//		
+//		// 메소드를 써서 생성하겠음
+//		// 먼저 필요한 메소드를 생각해보자
+//		
+//		// 아직은 없는 메소드
+//		// 추가용 메소드 => insert
+//		// 데스크탑이라는 객체를 생성해서 넘기는 메소드
+//		es.insert(new Desktop("Samsung", "데땁", 1200000, "gtx1070"));
+//		
+//		// 노트북이라는 객체를 생성해서 넘기는 메소드
+//		es.insert(new NoteBook("LG", "Gram", 2000000, 4));
+//		
+//		// 태블릿이라는 객체를 생성해서 넘기는 메소드
+//		es.insert(new Tablet("Apple", "I-Pad", 800000, false));
+//		
+//		// 가게에 해당 객체들이 잘 생성되어 있는지를 확인해보자
+//		// 조회용 메소드 => select();
+//		
+//		//String desk = es.selectDesktop();
+//		Desktop d = es.selectDesktop();
+//		NoteBook n = es.selectNoteBook();
+//		Tablet t = es.selectTablet();
+//		
+//		System.out.println(d);
+//		System.out.println(n);
+//		System.out.println(t);
 		
 		// 2. 다형성을 적용했을 경우 (ElectronicShop2)
 		ElectronicShop2 es = new ElectronicShop2();
