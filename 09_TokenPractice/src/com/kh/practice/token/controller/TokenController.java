@@ -17,6 +17,7 @@ public class TokenController {
 		// 현재 stn에 str의 문자열이 " "을 기준으로 하나하나 쪼개져서 저장되어 있는 상태
 		StringTokenizer stn = new StringTokenizer(str, " ");
 		
+		/*
 		// 현재 토큰의 개수를 count 변수에 저장
 		int count = stn.countTokens();
 		
@@ -29,10 +30,24 @@ public class TokenController {
 		}
 		
 		// 초기화 된 배열을 문자열로 변환
-		String str2 = String.valueOf(arr);
+		str = String.valueOf(arr);
+		
+		// count만큼 for문을 돌려 각각의 토큰값을 str에 저장
+		for(int i = 0; i < count; i++) {
+			str += stn.nextToken();
+		}
+		*/
+
+		// str을 ""로 초기화
+		str = "";
+		
+		// 토큰이 남아있다면 str에 토큰값을 저장
+		while(stn.hasMoreTokens()) {
+			str += stn.nextToken();
+		}
 		
 		// 문자열을 반환값으로 지정
-		return str2;
+		return str;
 		
 	}
 	
@@ -44,12 +59,12 @@ public class TokenController {
 		// input의 첫번째 문자만 떼서 대문자로 바꾸고
 		String str1 = input.substring(0, 1).toUpperCase();
 		// input에서 나머지 문자들도 뗀 후에
-		String str2 = input.substring(1, input.length());
+		String str2 = input.substring(1);
 		// 그 두개를 다시 합친다
-		String str3 = str1.concat(str2);
+		input = str1.concat(str2);
 		
 		// 합친 값을 반환값으로 지정
-		return str3;
+		return input;
 	}
 	
 	// 매개변수와 반환값 모두 가지고 있는 메소드

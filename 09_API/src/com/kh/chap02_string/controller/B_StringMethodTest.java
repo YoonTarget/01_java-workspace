@@ -54,13 +54,13 @@ public class B_StringMethodTest {
 		
 		// ** Quiz		
 		
-		// 1. Worl만 추출 + concat 함수로 ! 엮어서 str0 만들기 => Worl!
+		// 1) Worl만 추출 + concat 함수로 ! 엮어서 str0 만들기 => Worl!
 		System.out.println(str1.substring(6, 10));
 
 		String str0 = str1.substring(6, 10).concat("!");
 		System.out.println(str0);
 		
-		// 2. contains 함수 이용하여 !가 포함되어 있는지 여부 추출 => str0에 !가 포함되어 있습니까? : true
+		// 2) contains 함수 이용하여 !가 포함되어 있는지 여부 추출 => str0에 !가 포함되어 있습니까? : true
 		System.out.println("str0에 !가 포함되어 있습니까? : " + str0.contains("!"));
 		
 		// 7. 문자열.replace(char oldChar, char newChar) : String

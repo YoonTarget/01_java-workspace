@@ -33,11 +33,11 @@ public class TokenMenu {
 			switch(num) {
 			// 1번은 토큰 메뉴 실행
 			case 1 :
-				this.tokenMenu();
+				tokenMenu();
 				break;
 			// 2번은 입력 메뉴 실행	
 			case 2 :
-				this.inputMenu();
+				inputMenu();
 				break;
 			// 9번은 프로그램 종료
 			case 9 :
@@ -60,10 +60,8 @@ public class TokenMenu {
 	public void tokenMenu() {
 		String str = "J a v a P r o g r a m ";
 		// 토큰 처리 전 글자, 토큰 처리 전 개수를 출력
-		System.out.print("토큰 처리 전 글자 : " + str);
-		System.out.println();
-		System.out.print("토큰 처리 전 개수 : " + str.length());
-		System.out.println();
+		System.out.println("토큰 처리 전 글자 : " + str);
+		System.out.println("토큰 처리 전 개수 : " + str.length());
 		
 		// TokenController(tc)의 afterToken()의 반환 값을 가지고
 		// => 	TokenController의 객체인 tc로 afterToken() 메소드를 호출해서
@@ -71,21 +69,16 @@ public class TokenMenu {
 		//		=> tc.afterToken(str);
 		
 		// 토큰 처리 후 글자, 토큰 처리 후 개수, 모두 대분자로 변환한 것을 출력
+		String result = tc.afterToken(str);
 		
 		// 토큰 처리 후 글자 출력
-		System.out.print("토큰 처리 후 글자 : " + tc.afterToken(str));
+		System.out.println("토큰 처리 후 글자 : " + result);
 	
-		System.out.println();
-		
 		// 토큰 처리 후 개수 출력
-		System.out.print("토큰 처리 후 개수 : " + tc.afterToken(str).length());
-		
-		System.out.println();
+		System.out.println("토큰 처리 후 개수 : " + result.length());
 		
 		// 글자를 모두 대문자로 변환한 값 출력
-		System.out.print("모두 대문자로 변환 : " + tc.afterToken(str).toUpperCase());
-		
-		System.out.println();
+		System.out.println("모두 대문자로 변환 : " + result.toUpperCase());
 		
 	}
 	
@@ -101,9 +94,10 @@ public class TokenMenu {
 		//		=> tc.firstCap(input);
 	
 		// tc
+		String result = tc.firstCap(input);
 		
 		// 첫 글자를 대문자로 바꾸고 출력
-		System.out.println("첫 글자 대문자 : " + tc.firstCap(input));
+		System.out.println("첫 글자 대문자 : " + result);
 		
 		// 문자열에서 찾고 싶은 문자 입력
 		System.out.print("찾을 문자를 하나 입력하세요 : ");
@@ -111,8 +105,8 @@ public class TokenMenu {
 		
 		// tc에 findChar()로 위에 입력 받은 문자열과 방금 받은 문자를 인자로 넘겨
 		// 반환 값 출력
-		System.out.print(one + " 문자가 들어간 개수 : " + tc.findChar(input, one));
-		System.out.println();
+		int result2 = tc.findChar(input, one);
+		System.out.println(one + " 문자가 들어간 개수 : " + result2);
 		
 	}
 
