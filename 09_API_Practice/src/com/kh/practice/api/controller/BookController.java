@@ -46,12 +46,13 @@ public class BookController {
 		
 		// 2. 매개변수로 전달받은 newDate값 ==> String --> Date로 변환 작업 (Date publishDate에 담으시오)
 		// '-'를 구분자로 StringTokenizer를 이용하여 문자열 분리 후 각각 년,월,일 을 Date에 적용
+		
 		// 1) StringTokenizer를 이용한 방법
+		
 		// 1_1) StringTokenizer를 이용하여 먼저 "2020-07-01" 을 각각 문자열로분리("2020", "07", "01")
 		StringTokenizer stn = new StringTokenizer(newDate, "-");
 		
 		// 1_2) 각 분리된 문자열들을 매번 뽑아서 int 변수들에 담기
-		
 		int year = Integer.parseInt(stn.nextToken());
 		int month = Integer.parseInt(stn.nextToken());
 		int date = Integer.parseInt(stn.nextToken());
@@ -60,25 +61,25 @@ public class BookController {
 		Date publishDate = new Date(year - 1900, month - 1, date);
 		
 //		// 2) split 메소드를 이용한 방법
+		
 //		// 2_1) split 메소드를 이용하여 먼저 "2020-07-01" 을 각각 문자열로 분리후 String[] 배열에 담기
 //		String[] arr = newDate.split("-");
+		
 //		// 2_2) 각 분리된 문자열들이 담겨있는 해당 배열에 인덱스에 접근해서int 변수들에 담기
-
 //		int year2 = Integer.parseInt(arr[0]);
 //		int month2 = Integer.parseInt(arr[1]);
-//		int date2 = Integer.parseInt(arr[1]);
+//		int date2 = Integer.parseInt(arr[2]);
 //		
 //		// 2_3) year, month, date 가지고 Date객체 생성하기
 //		Date publishDate2 = new Date(year2 - 1900, month2 - 1, date2);
 		
 		// 3. 나머지 전달받은 값들과 위에서 변환작업을 해준 price와 date값을가지고
 		// Book클래스의 매개변수 생성자를 통해 생성
-
 		count++;
 		
 		Book[] copy = Arrays.copyOf(books, count);
 		
-		copy[count - 1] = new Book(newTitle, newAuthor, newPublisher, publishDate, price); 
+		copy[count - 1] = new Book(newTitle, newAuthor, newPublisher, publishDate, price);
 		
 		books = copy;
 		
