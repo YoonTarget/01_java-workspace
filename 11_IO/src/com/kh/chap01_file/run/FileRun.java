@@ -45,7 +45,7 @@ public class FileRun {
 			
 			System.out.println(f1.isFile()); // 파일이냐??
 			System.out.println(tempFolder.isFile());
-			System.out.println(f1.isDirectory());
+			System.out.println(tempFolder.isDirectory());
 			
 			// -----------------------------------------------
 			
