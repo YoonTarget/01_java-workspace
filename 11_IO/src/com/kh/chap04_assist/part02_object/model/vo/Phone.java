@@ -3,7 +3,6 @@ package com.kh.chap04_assist.part02_object.model.vo;
 import java.io.Serializable;
 
 public class Phone implements Serializable {
-	
 	// 객체 자체를 입출력 하고자 한다면 직렬화 과정 필수
 	
 	private String name;

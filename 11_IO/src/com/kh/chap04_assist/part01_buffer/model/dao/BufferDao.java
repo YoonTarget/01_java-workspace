@@ -88,7 +88,7 @@ public class BufferDao {
 		
 		try (BufferedReader br = new BufferedReader(new FileReader("c_buffer.txt"))) {
 			
-			// br.read()
+			// br.read();
 			// br.readLine(); 한 문장씩 가져오게 되어있음, 반환형 스트링!!!
 			
 			/*
