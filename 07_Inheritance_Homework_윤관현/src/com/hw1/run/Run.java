@@ -63,7 +63,7 @@ public class Run {
 			count++;
 			
 			// 10명의 정보가 모두 입력됐다면 입력을 종료
-			if(count == 10) {
+			if(count == e.length) {
 				System.out.println(count + "명의 사원 정보가 모두 기록되었습니다.");
 				break;
 			}

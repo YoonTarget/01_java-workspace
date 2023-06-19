@@ -70,7 +70,7 @@ public class ObjectArrayRun {
 			}
 		}
 		
-		if(count == 3) {
+		if(count == phones.length) {
 			System.out.println("해당하는 휴대폰이 없습니다.");
 		}
 		
