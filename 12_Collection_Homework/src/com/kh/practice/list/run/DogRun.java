@@ -18,9 +18,9 @@ public class DogRun {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int count = 1;
-		while(true) {
-			System.out.print(count + "번째 강쥐 이름 입력 : ");
+		int count = 0;
+		while(count < 5) {
+			System.out.print(count + 1 + "번째 강쥐 이름 입력 : ");
 			String name = sc.nextLine();
 			
 			System.out.print("강쥐 나이 입력 : ");
@@ -31,9 +31,8 @@ public class DogRun {
 			System.out.print("강쥐 종 입력 (ex. 말티즈) : ");
 			String kind = sc.nextLine();
 			
-			if(count == 5) {
+			if(count == 4) {
 				list.add(2, new Dog(name, age, kind));
-				break;
 			}
 			else {
 				list.add(new Dog(name, age, kind));
@@ -58,6 +57,7 @@ public class DogRun {
 		
 		while(list.get(count2).getName().contains("구")) {
 			System.out.println(list.get(count2));
+			
 			count2++;
 		}
 		
