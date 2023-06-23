@@ -14,7 +14,7 @@ public class ServerProgram {
 		
 		/*
 		 * TCP(Transmission Control Protocol)
-		 * - 서버, 클라이언트 간의 1 : 1 소켓 통신
+		 * - 서버, 클라이언트 간의 1:1 소켓 통신
 		 * - 데이터를 교환하기에 앞서서 서버, 클라이언트가 연결되어 있어야 함!! (서버가 먼저 실행되어 클라이언트의 요청을 기다릴거임)
 		 * - 신뢰성 있는 데이터 전달 가능
 		 * 
@@ -24,7 +24,7 @@ public class ServerProgram {
 		 * 
 		 * * Server Socket
 		 * - 포트와 연결되어(Bind) 외부의 연결 요청을 기다리다 연결요청 들어오면 수락해줄 용도
-		 * 	 수학 => 통신할 수 있는 Client Socket 생성
+		 * 	 수락 => 통신할 수 있는 Client Socket 생성
 		 */
 		
 		Scanner sc = new Scanner(System.in);

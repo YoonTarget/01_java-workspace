@@ -61,6 +61,14 @@ public class BookController implements BookManager {
 			if(b instanceof Magazine == false) {
 				book.add(b);
 			}
+			/*
+			if(b instanceof Magazine) { 
+				continue; 
+				// continue를 쓰면 여기에 담기는 값들은 조건을 수행하지 않고 해당 반복문으로 이동한다. 
+				// 특정 조건을 제외시킬 때 유용하니 잘 기억해두자!!
+			}
+			book.add(b);
+			*/
 		}
 		
 		return book;
@@ -87,10 +95,19 @@ public class BookController implements BookManager {
 		
 		ArrayList<Book> magazine = onlySearchMagazine();
 		
+		/*
 		for(Book b : magazine) {
-			Magazine m = (Magazine)b;
+			Magazine m = (Magazine)b; 
+			// 불필요한 코드 : b를 Magazine으로 형변환해서 전체를 괄호를 묶은 후 getYear() 메소드를 불러오면 된다.
 			if(m.getYear() == year) {
 				searchYear.add(m);
+			}
+		}
+		*/
+		
+		for(Book b : magazine) {
+			if(((Magazine)b).getYear() == year) {
+				searchYear.add(b);
 			}
 		}
 		
