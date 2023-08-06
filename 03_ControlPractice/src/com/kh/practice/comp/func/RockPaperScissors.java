@@ -14,6 +14,16 @@ public class RockPaperScissors {
 		 */
 		Scanner sc = new Scanner(System.in); // 스캐너 생성
 		
+		System.out.print("당신의 이름을 입력해 주세요 : "); // 이름 입력 가이드 문구 출력
+		String name = sc.nextLine(); // 이름 입력
+		
+		int match = 0; // 전적 계산을 위한 int 값 초기화
+		int win = 0;
+		int draw = 0;
+		int lose = 0;
+		
+		while(true) { // exit가 입력되기 전까지는 무한 반복
+		
 		int random = (int)(Math.random() * 3 + 1); // 1~3까지의 랜덤값 생성
 		
 		String computer = ""; // String 값 초기화
@@ -29,15 +39,6 @@ public class RockPaperScissors {
 			computer = "보";
 		}
 		
-		System.out.print("당신의 이름을 입력해 주세요 : "); // 이름 입력 가이드 문구 출력
-		String name = sc.nextLine(); // 이름 입력
-		
-		int match = 0; // 전적 계산을 위한 int 값 초기화
-		int win = 0;
-		int draw = 0;
-		int lose = 0;
-		
-		while(true) { // exit가 입력되기 전까지는 무한 반복
 			System.out.print("가위바위보 : "); // 가위바위보 가이드 문구 출력
 			String me = sc.nextLine(); // 사용자의 가위바위보 입력
 			
