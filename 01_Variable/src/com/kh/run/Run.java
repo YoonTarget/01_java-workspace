@@ -12,7 +12,7 @@ public class Run {
 		//클래스명 별칭 = new 클래스명();
 		A_Variable a = new A_Variable();
 		//a.printVariable();
-		//a.decleareVariable();
+		a.decleareVariable();
 		
 		B_KeyboardInput b = new B_KeyboardInput();
 		//b.inputTest1();
@@ -22,7 +22,7 @@ public class Run {
 		//b.charAtTest();
 		
 		C_Printf c = new C_Printf();
-		c.printfTest();
+		//c.printfTest();
 		
 		D_Cast d = new D_Cast();
 		//d.autoCasting();

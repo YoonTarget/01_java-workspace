@@ -33,7 +33,7 @@ public class A_Variable {
 		//변수 사용 후
 		System.out.println("=== 변수 사용 후 ===");
 		
-		//자료형 변수명 = 값; 
+		//자료형 변수명 = 값;
 		int pay = 10000; 
 		int day = 4;
 		int time = 8;
